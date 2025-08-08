@@ -7,49 +7,48 @@
                 questions: [
                     {
                         image: '../img/e1aeroplane.png', // Placeholder para un reloj
-                        text: 'This is a Aeroplane ?.',
+                        text: 'Is this a Aeroplane ?.',
                         answer: true
                     },
                     {
                         image: '../img/e1duck.png', // Placeholder para motorbikes
-                        text: 'This is a Duck ?.',
+                        text: 'Is this a Duck ?.',
                         answer: true
                     },
                     {
                         image: '../img/e1erase.png', // Placeholder para unos pantalones cortos
-                        text: 'These are rules ?',
+                        text: 'Are these rules ?',
                         answer: false
                     },
                     {
                         image: '../img/e1eye.png', // Placeholder para una oreja
-                        text: 'This is a nose.?',
+                        text: 'Is this a nose.?',
                         answer: false
                     },
                     {
                         image: '../img/e1balloon.png', // Placeholder para limas
-                        text: 'These are balloons.',
+                        text: 'Are These balloons.',
                         answer: true
                     },
                     {
                         image: '../img/e1chears.png', // Placeholder para raqueta de tenis
-                        text: 'These are chairs.?',
+                        text: ' Are These chairs.?',
                         answer: true
                     },
                     {
                         image: '../img/e1dress.png', // Placeholder para raqueta de tenis
-                        text: 'This is a jacket?',
+                        text: 'Is This a jacket?',
                         answer: false
                     },
                     {
                         image: '../img/e1book.png', // Placeholder para raqueta de tenis
-                        text: 'This is a Glasses?',
+                        text: 'is This a Glasses?',
                         answer: false
                     }
                 
                 ]
-            },
-            // Ejercicio 2: "Look and read. Write yes or no."
-            {   id: 'exercise-2',
+            },          
+            {   id: 'exercise-2',  // Ejercicio 2: "Look and read. Write yes or no."
                 type: 'yes-no',
                 title: 'Ejercicio 2: Responde "yes" o "no"',
                 image: '../img/imagen10.png', // Placeholder para la imagen de la página 10
@@ -77,7 +76,7 @@
                     {
                         image: '',
                         text: 'There is a spider on the tree.',
-                        answer: false
+                        answer: true
                     },
                     {
                         image: '',
@@ -91,44 +90,44 @@
                     }
                 ]
             },
-            {   id: 'exercise-3',
+            {   id: 'exercise-3',  //Ver la imagen y escribir el nombre'
                 type: 'letter',
                 title: 'Ejercicio 3: Ver la imagen y escribir el nombre',
                 image: '', // Placeholder para la imagen de la página 10
                 questions: [
                     {
-                        image:'../img/e3boat.png',
+                        image:['../img/e3boat.png',''],
                         text: '',
                         answer: 'BOAT'
                     },
                            {
-                        image:'../img/e3helicopter.png',
+                        image:['../img/e3helicopter.png',''],
                         text: '',
                         answer: 'HELICOPTER'
                     },
                            {
-                        image:'../img/e3bike.png',
+                        image:['../img/e3bike.png',''],
                         text: '',
                         answer: 'BIKE'
                     },
                            {
-                        image:'../img/e3plane.png',
+                        image:['../img/e3plane.png',''],
                         text: '',
                         answer: 'PLANE'
                     },
                            {
-                        image:'../img/e3car.png',
+                        image:['../img/e3car.png',''],
                         text: '',
                         answer: 'CAR'
                     },
                            {
-                        image:'../img/e3train.png',
+                        image:['../img/e3train.png',''],
                         text: '',
                         answer: 'TRAIN'
                     },
                 ]
             },
-            {   id: 'exercise-4',
+            {   id: 'exercise-4', //Ver la imagen y responder las acciones
                 type: 'tick-cross',
                 title: 'Ejercicio 4: Es correcto ?',
                 image: '', // Placeholder para la imagen de la página 10
@@ -191,7 +190,7 @@
                     },
                      {
                         image:'',
-                        text: 'the gbaby is sleeping on the table?',
+                        text: 'the baby is sleeping on the table?',
                         answer: false
                     },
                      {
@@ -202,13 +201,87 @@
                      {
                         image:'',
                         text: 'the clock is between the window ',
-                        answer: true
+                        answer: false
                     },
                 ]
-            }
+            }, 
+            {   id: 'exercise-6',  //Ver la imagen y escribir el nombre'
+                type: 'letter2',
+                title: 'Ejercicio 6: Encuentre el Nombre ',
+                image: '../img/e5lucybethroom.png', // Placeholder para la imagen de la página 10
+                questions: [
+                    {
+                        image:['../img/e5-bean.png','../img/e5-beanR.png'],
+                        text: '',
+                        answer: 'bean'
+                    },
+                           {
+                        image:['../img/e5-frise.png','../img/e5-friseR.png'],
+                        text: '',
+                        answer: 'frise'
+                    },
+                           {
+                        image:['../img/e5-bread.png','../img/e5-breadR.png'],
+                        text: '',
+                        answer: 'bread'
+                    },
+                           {
+                        image:['../img/e5-grapes.png','../img/e5-grapesR.png'],
+                        text: '',
+                        answer: 'grapes'
+                    },
+                           {
+                        image:['../img/e5-sausage.png','../img/e5-sausageR.png'],
+                        text: '',
+                        answer: 'sausage'
+                    },
+                           {
+                        image:['../img/e5-watermelon.png','../img/e5-watermelonR.png'],
+                        text: '',
+                        answer: 'watermelon'
+                    },
+                ]
+            },
+            {   id: 'exercise-7',  //Ver la imagen y escribir el nombre'
+                type: 'Textwrite',
+                title: 'Ejercicio 7: Compplete el parrafo',
+                image: ['../img/E7-myCousinNick.png','../img/e7-mycousinNick2.png'], // Placeholder para la imagen de la página 10
+                questions: [
+                    {
+                        image: '',
+                        text: 'This ins my cousin Nick, Nick lives in my street with his mum, dad and two',
+                        answer: 'JEANS'
+                    },
+                    {
+                        image:'',
+                        text: 'He likes to wear T-shirt and',
+                        answer: 'PLAYGROUND'
+                    },
+                    {
+                        image:'',
+                        text: 'on our Bikes. Then, we get',
+                        answer: 'ICE CREAMS'
+                    },
+                    {
+                        image:'',
+                        text: '-Chocolate is our favaurite! In the evening, we wath',
+                        answer: 'TELEVISION'
+                    },
+                    {
+                        image:'',
+                        text: ' or Talk to our friends on the computer',
+                        answer: 'PIANO'
+                    },
+                    {
+                        image:'',
+                        text: 'too. We love Music',
+                        answer: ''
+                    }
+                ]
+            },
         ];
 
-        let currentExerciseIndex = 0;
+        let currentExerciseIndex = 6;
         const gameContainer = document.getElementById('game-container');
         const messageBoxContainer = document.getElementById('message-box-container');
         const messageBox = document.getElementById('message-box');
@@ -254,6 +327,7 @@
                         </div>
                     </div>
                 `;
+
             } else if(exercise.type === 'letter'){
                   html = `
                         <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-2xl mx-auto text-center">
@@ -261,9 +335,10 @@
                             <div id="typing-game-questions" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 ${exercise.questions.map((q, index) => `
                                     <div class="bg-blue-50 p-4 rounded-xl flex flex-col items-center justify-center game-card" data-index="${index}">
-                                        <img src="${q.image}" alt="Ejercicio ${index + 1}" class="question-image rounded-lg mb-4">
+                                        <img src="${q.image[0]}" alt="Ejercicio ${index + 1}" class="question-image rounded-lg mb-4">
                                         <div id="text-display-${index}" class="typing-text mb-4"></div>
                                         <input type="text" id="typing-input-${index}" class="typing-input" placeholder="Escribe aquí..." data-answer="${q.answer}" />
+                                        <img src="${q.image[1]}" alt="" class="question-image rounded-lg mb-4 hidden">
                                         <button id="check-btn-${index}" class="button-primary bg-blue-500 hover:bg-blue-600 mt-4 hidden">Comprobar</button>
                                         <button id="check-btn-${index}" class="button-primary bg-blue-500 hover:bg-blue-600 mt-4 hidden">Comprobar</button>
                                     </div>
@@ -271,26 +346,47 @@
                             </div>
                         </div>
                     `;
-            } /* else if (exercise.type === 'yes-no') {
-                html = `
-                    <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-3xl mx-auto text-center">
-                        <h2 class="text-3xl font-bold text-blue-600 mb-6">${exercise.title}</h2>
-                       
-                        <div class="grid grid-cols-1 gap-4">
-                            ${exercise.questions.map((q, index) => `
-                                <div class="bg-blue-50 p-4 rounded-xl flex flex-col sm:flex-row items-center justify-between game-card" data-index="${index}">
-                                     <img src="${q.image}" alt="Imagen del ejercicio" class="question-image">
-                                    <p class="text-lg font-semibold text-gray-700 mb-2 sm:mb-0">${q.text}</p>
-                                    <div class="flex space-x-4 mt-2 sm:mt-0">
-                                        <button class="button-primary bg-green-500 hover:bg-green-600" data-choice="true">Yes</button>
-                                        <button class="button-primary bg-red-500 hover:bg-red-600" data-choice="false">No</button>
+            } else if(exercise.type === 'letter2'){
+                  html = `
+                        <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-2xl mx-auto text-center">
+                            <h2 class="text-3xl font-bold text-blue-600 mb-6">${exercise.title}</h2>
+                            <div id="typing-game-questions" >
+                                ${exercise.questions.map((q, index) => `
+                                    <div class="bg-blue-50 p-4 rounded-xl flex  items-center justify-center game-card" data-index="${index}">
+                                        <img src="${q.image[0]}" alt="Ejercicio ${index + 1}" class="question-image rounded-lg mb-4">
+                                        <div class"flex flex-col items-center justify-center">
+                                            <div id="text-display-${index}" class="typing-text mb-4"> </div>
+                                            <input type="text" id="typing-input-${index}" class="typing-input" placeholder="Escribe aquí..." data-answer="${q.answer}" />
+                                        </div>
+                                        <img src="${q.image[1]}" alt="" class="question-image rounded-lg mb-4 ">
+                                        <button id="check-btn-${index}" class="button-primary bg-blue-500 hover:bg-blue-600 mt-4 hidden">Comprobar</button>
+                                        <button id="check-btn-${index}" class="button-primary bg-blue-500 hover:bg-blue-600 mt-4 hidden">Comprobar</button>
                                     </div>
-                                </div>
-                            `).join('')}
+                                `).join('')}
+                            </div>
                         </div>
-                    </div>
-                `;
-            } */
+                    `;
+            } else if(exercise.type === 'Textwrite'){
+                  html = `
+                        <div class="bg-white p-8 rounded-3xl shadow-xl w-full max-w-2xl mx-auto text-center">
+                            <h2 class="text-3xl font-bold text-blue-600 mb-6">${exercise.title}</h2>
+                            <img src="${exercise.image[0]}" alt="Imagen del ejercicio" class="w-full h-auto rounded-xl mb-8">
+                            <div id="typing-game-questions" >
+                                <div class="bg-blue-50 p-4 rounded-xl game-card" data-index="${exercise.id}">
+                                    ${exercise.questions.map((q, index) => `
+                                        <div id="text-display-${index}" class="typing-text mb-4 hidden"> </div>
+                                        <span class="text-2xl font-bold "> ${q.text}  </span>
+                                        <input type="text" id="typing-input-${index}" class="typing-input" placeholder="Escribe aquí..." data-answer="${q.answer}" />
+                                     
+                                    `).join('')}
+                                    <button id="check-btn-${exercise.questions.id}" class="button-primary bg-blue-500 hover:bg-blue-600 mt-4 hidden">Comprobar</button>
+                                    <button id="check-btn-${exercise.questions.id}" class="button-primary bg-blue-500 hover:bg-blue-600 mt-4 hidden">Comprobar</button>
+                                </div>
+                            <img src="${exercise.image[1]}" alt="Imagen del ejercicio" class="w-full h-auto rounded-xl mb-8">
+                            </div>
+                        </div>
+                    `;
+            }  
 
             gameContainer.innerHTML = html;
             addEventListeners(exercise.type);
@@ -308,11 +404,18 @@
                         });
                     });
                 });
-            } else if (type === 'letter') {
+            } else if (type === 'letter' || type === 'letter2' ) {
                 const questionsContainer = document.getElementById('typing-game-questions');
                 questionsContainer.querySelectorAll('input').forEach(input => {
                     input.addEventListener('input', (e) => {
-                        handleTyping(e.target);
+                        handleTyping(e.target, type);
+                    });
+                });
+            }else if (type === 'Textwrite') {
+                const questionsContainer = document.getElementById('typing-game-questions');
+                questionsContainer.querySelectorAll('input').forEach(input => {
+                    input.addEventListener('input', (e) => {
+                        handleTyping(e.target, type);
                     });
                 });
             }
@@ -345,9 +448,10 @@
 
         
         // Lógica para el juego de escribir
-        function handleTyping(input) {
+        function handleTyping(input,type) {
             const index = input.id.split('-')[2];
             const card = input.closest('.game-card');
+             console.log(input)
             const textDisplay = document.getElementById(`text-display-${index}`);
             const correctAnswer = input.dataset.answer;
 
@@ -355,12 +459,15 @@
 
             // Verificar si la respuesta es correcta
             if (input.value.toLowerCase() === correctAnswer.toLowerCase()) {
-                card.classList.add('correct');
-                input.disabled = true;
-                // Deshabilitar los botones después de responder
-                card.querySelectorAll('button').forEach(button => {
-                button.disabled = true;
-                });
+                if(!type === 'Textwrite'){
+                    card.classList.add('correct');
+                    input.disabled = true;
+                    // Deshabilitar los botones después de responder
+                    card.querySelectorAll('button').forEach(button => {
+                        button.disabled = true;
+                    });
+                }
+
                 checkExerciseCompletion();
             }
         }

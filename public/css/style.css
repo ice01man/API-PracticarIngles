@@ -15,12 +15,13 @@
             cursor: pointer;
         }
         .game-card input{
-            height: 20px;
-            width: 100%;
+            height: 10px;
+            background-color: none;
+            border-bottom: 1px dashed gray;
             border-radius: 1rem;
-            padding: 1.5rem;
+            padding: 1em;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            font-size: 20px;
+            font-size: 15px;
         }
         .game-card:hover {
             transform: translateY(-5px);
