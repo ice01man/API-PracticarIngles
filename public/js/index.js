@@ -281,7 +281,7 @@
             },
         ];
 
-        let currentExerciseIndex = 6;
+        let currentExerciseIndex = 0;
         const gameContainer = document.getElementById('game-container');
         const messageBoxContainer = document.getElementById('message-box-container');
         const messageBox = document.getElementById('message-box');
