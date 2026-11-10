@@ -2,6 +2,7 @@
 // Ayudas de interfaz: escapar texto, dibujar pantallas, modal, confeti y llamadas a la API.
 
 import { store } from './store.js';
+import { canInstall, promptInstall, isIOS, isStandalone } from './pwa.js';
 
 export const $ = (sel, root = document) => root.querySelector(sel);
 export const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
@@ -38,13 +39,15 @@ export function renderTopbar() {
   document.body.classList.toggle('mode-kids', p?.level === 'kids');
   document.body.classList.toggle('mode-adult', p?.level === 'adult');
   $('#topbar').innerHTML = p ? `
-    <a href="#/home" class="brand" aria-label="Inicio">🦉 <span>English Practice</span></a>
+    <a href="#/home" class="brand" aria-label="Inicio"><img src="/icons/icon.svg" alt="" class="brand-logo"> <span>English Practice</span></a>
     <div class="topbar-right">
+      ${canInstall() ? '<button class="btn btn-small btn-primary" id="install-btn">📲 Instalar</button>' : ''}
       <span class="pill" title="Estrellas">⭐ ${p.stars}</span>
       <span class="pill" title="Días seguidos practicando">🔥 ${p.streak}</span>
       <button class="icon-btn" id="sound-btn" aria-label="Sonido">${store.soundOn ? '🔊' : '🔇'}</button>
       <a href="#/profiles" class="avatar-btn" title="Cambiar jugador">${esc(p.avatar)}</a>
-    </div>` : `<span class="brand">🦉 <span>English Practice</span></span>`;
+    </div>` : `<span class="brand"><img src="/icons/icon.svg" alt="" class="brand-logo"> <span>English Practice</span></span>`;
+  $('#install-btn')?.addEventListener('click', promptInstall);
   const sb = $('#sound-btn');
   if (sb) sb.onclick = () => { store.toggleSound(); renderTopbar(); };
 }
@@ -97,3 +100,9 @@ const RETRY_ADULT = ['No es correcto', 'Casi', 'Revisalo'];
 const pick = (a) => a[Math.floor(Math.random() * a.length)];
 export const praise = () => pick(isKids() ? PRAISE_KIDS : PRAISE_ADULT);
 export const retryMsg = () => pick(isKids() ? RETRY_KIDS : RETRY_ADULT);
+
+// Ayuda para instalar en iPhone/iPad (Safari no tiene botón automático).
+export function iosInstallHint() {
+  if (!isIOS() || isStandalone()) return '';
+  return `<p class="center muted install-hint">📲 Para instalarla en el iPhone: tocá <b>Compartir</b> ⬆️ y después <b>Agregar a inicio</b>.</p>`;
+}

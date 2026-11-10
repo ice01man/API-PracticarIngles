@@ -56,6 +56,15 @@ Juegos con imágenes
 Pronunciación
 - Usa la voz del navegador (Web Speech API), sin servicios externos.
 
+## App instalable (PWA)
+
+- Se puede instalar en el celular o la compu como una app, con su ícono (el búho 🦉 con birrete).
+- Android y Chrome/Edge: aparece el botón "📲 Instalar" arriba.
+- iPhone/iPad: en Safari, Compartir → Agregar a inicio (la app muestra el aviso).
+- Funciona sin internet: guarda la app, las imágenes, los verbos y las lecciones la primera vez que se abre.
+- Archivos: `public/manifest.webmanifest`, `public/sw.js`, `public/js/pwa.js` y `public/icons/`.
+- Importante: cuando cambies algo de la app, subí `VERSION` en `public/sw.js` (v1 → v2) para que los celulares tomen la versión nueva.
+
 ## API
 
 | Ruta | Qué devuelve |
@@ -82,6 +91,9 @@ data/
   picture-games.js  Juegos con imágenes
 public/
   index.html
+  manifest.webmanifest  Datos de la app instalable (nombre, colores, íconos)
+  sw.js             Service worker: uso sin conexión
+  icons/            Ícono en SVG y PNG (192, 512, maskable, Apple)
   css/style.css
   js/main.js        Jugadores, inicio y navegación
   js/quiz.js        Motor de preguntas que usan todos los juegos
@@ -91,6 +103,7 @@ public/
   js/store.js       Progreso en el navegador
   js/sound.js       Voz y sonidos
   js/answers.js     Corrección de respuestas
+  js/pwa.js         Instalación y service worker
 tests/api.test.js
 ```
 

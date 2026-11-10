@@ -1,7 +1,8 @@
 // main.js
 // Punto de entrada: jugadores, pantalla de inicio y navegación (#/ruta).
 
-import { $, $$, esc, render, renderTopbar, modal, api, isKids } from './ui.js';
+import { $, $$, esc, render, renderTopbar, modal, api, isKids, iosInstallHint } from './ui.js';
+import { initPWA, onInstallChange } from './pwa.js';
 import { store } from './store.js';
 import { verbsHub, verbsList, regularHub } from './verbs.js';
 import { lessonsList, lessonView } from './lessons.js';
@@ -106,6 +107,7 @@ async function homeView() {
       </div>
 
       <p class="center muted">${kids ? '🦉 Tip: tocá 🔊 para escuchar cómo se dice.' : 'Tip: en las preguntas de opciones podés usar las teclas 1 a 4.'}</p>
+      ${iosInstallHint()}
       <p class="center"><button class="btn btn-small" id="switch-level">Cambiar a ${kids ? 'modo grandes' : 'modo chicos'}</button></p>
     </section>`);
 
@@ -147,5 +149,7 @@ async function router() {
 }
 
 window.addEventListener('hashchange', router);
+initPWA();
+onInstallChange(renderTopbar);
 renderTopbar();
 router();

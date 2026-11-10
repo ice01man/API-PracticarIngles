@@ -1,6 +1,6 @@
 {
   "name": "api-english",
-  "version": "2.1.0",
+  "version": "2.4.0",
   "description": "App para practicar inglés y verbos irregulares, para chicos y adultos",
   "main": "app.js",
   "type": "module",
