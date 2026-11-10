@@ -71,10 +71,10 @@ Pronunciación
 ## Estructura
 
 ```
-app.js              Express: API + archivos estáticos
-server.js           Levanta el servidor
+app.js              Express: API (entrada para Vercel)
+start.js            Levanta el servidor en la compu (npm start)
 data/
-  verbs.json        Verbos del PDF de clase (irregulares y regulares)
+  verbs.js          Verbos del PDF de clase (irregulares y regulares)
   lessons.js        Lecciones armadas con las clases
   sentences.js      Oraciones para practicar verbos en contexto
   picture-games.js  Juegos con imágenes
@@ -97,3 +97,10 @@ tests/api.test.js
 - Una lección nueva: agregar un objeto en `data/lessons.js` (tipos `choice`, `fill` u `order`).
 - Más oraciones: agregar en `data/sentences.js`.
 - Los tests revisan que cada respuesta de opción múltiple esté entre las opciones y que las palabras para ordenar armen la oración.
+
+## Publicar en Vercel
+
+- Vercel detecta Express solo y usa `app.js` como punto de entrada (por el `export default`).
+- No hace falta `vercel.json`, ni comando de build.
+- Los archivos de `public/` los sirve Vercel directamente (en Vercel `express.static` no se usa).
+- No agregar otro archivo `index.js` o `server.js` en la raíz: Vercel podría tomarlo como entrada.

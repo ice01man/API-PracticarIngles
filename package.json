@@ -2,11 +2,11 @@
   "name": "api-english",
   "version": "2.0.0",
   "description": "App para practicar inglés y verbos irregulares, para chicos y adultos",
-  "main": "server.js",
+  "main": "app.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node start.js",
+    "dev": "nodemon start.js",
     "test": "node --test"
   },
   "engines": {

@@ -1,17 +1,17 @@
 // app.js
 // Arma la aplicación Express (API + archivos estáticos).
-// Se separa de server.js para poder probarla sin levantar el puerto.
+// En Vercel este es el punto de entrada: Vercel usa el "export default".
+// En la compu se levanta con start.js (npm start).
 
 import express from 'express';
 import path from 'path';
-import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { lessons } from './data/lessons.js';
 import { pictureGames } from './data/picture-games.js';
 import { pastSentences } from './data/sentences.js';
+import { verbs } from './data/verbs.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const verbs = JSON.parse(readFileSync(path.join(__dirname, 'data', 'verbs.json'), 'utf8'));
 
 export function createApp() {
   const app = express();
@@ -58,3 +58,5 @@ export function createApp() {
 
   return app;
 }
+
+export default createApp();
