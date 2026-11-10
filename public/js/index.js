@@ -134,31 +134,31 @@
                 questions: [
                     {
                         image:'../img/e4watch.png',
-                        text: 'This is a watch ?',
+                        text: 'This is a watch',
                         answer: true
                     },{
                         image:'../img/e4bikes.png',
-                        text: 'These are motorbikes ?',
+                        text: 'These are a motorbikes',
                         answer: false
                     },{
                         image:'../img/e4board.png',
-                        text: 'This is a board ?',
+                        text: 'This is a board',
                         answer: true
                     },{
                         image:'../img/e4tshorts.png',
-                        text: 'These are shotrs ?',
-                        answer: true
+                        text: 'These are shorts',
+                        answer: false
                     },{
                         image:'../img/e4eyes.png',
-                        text: 'This is an ear ?',
+                        text: 'This is an ear',
                         answer: false
                     },{
                         image:'../img/e4apples.png',
-                        text: 'These are limes ?',
+                        text: 'These are limes',
                         answer: false
                     },{
                         image:'../img/e4tennisracket.png',
-                        text: 'This is a tennis racket ?',
+                        text: 'This is a tennis racket',
                         answer: true
                     }
                 ]
@@ -281,10 +281,12 @@
             },
         ];
 
+        let UserScore = 0;
         let currentExerciseIndex = 0;
         const gameContainer = document.getElementById('game-container');
         const messageBoxContainer = document.getElementById('message-box-container');
         const messageBox = document.getElementById('message-box');
+        const score = document.getElementById('text-puntaje')
 
         // Función para renderizar un ejercicio
         function renderExercise(exercise) {
@@ -421,6 +423,13 @@
             }
         }
 
+        // logica para sumar estrellas
+        function sumarstars(){
+            UserScore++;
+            scorehtml = `<p>${UserScore} ⭐ </p>`;
+            score.innerHTML = scorehtml
+        };
+
         // Lógica para manejar las respuestas del usuario
         function handleAnswer(card, userChoice, type) {
             const index = parseInt(card.dataset.index);
@@ -433,6 +442,7 @@
 
             if (isCorrect) {
                 card.classList.add('correct');
+                sumarstars()
             } else {
                 card.classList.add('incorrect');
             }
@@ -462,9 +472,18 @@
                 if(!type === 'Textwrite'){
                     card.classList.add('correct');
                     input.disabled = true;
+                    sumarstars()
                     // Deshabilitar los botones después de responder
                     card.querySelectorAll('button').forEach(button => {
                         button.disabled = true;
+                    });
+                }else{
+                    card.classList.add('correct');
+                    input.disabled = true;
+                    sumarstars()
+                    // Deshabilitar los botones después de responder
+                    card.querySelectorAll('button').forEach(button => {
+                    button.disabled = true;
                     });
                 }
 
