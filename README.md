@@ -8,11 +8,11 @@ Sirve tanto para un chico de 9 años como para un adulto: cada jugador elige su 
 ```bash
 npm install
 npm start        # http://localhost:3000
-npm run dev      # con nodemon
+npm run dev      # se reinicia solo al guardar (node --watch)
 npm test         # pruebas de la API y de la corrección de respuestas
 ```
 
-Necesita Node 18 o más nuevo. El puerto se cambia con la variable `PORT`.
+Necesita Node 26 (versión LTS actual). El puerto se cambia con la variable `PORT`.
 
 ## Qué tiene
 
@@ -71,7 +71,9 @@ Pronunciación
 ## Estructura
 
 ```
-app.js              Express: API (entrada para Vercel)
+app.js              Express: la API
+api/index.js        Entrada para Vercel (usa app.js)
+vercel.json         Configuración de Vercel
 start.js            Levanta el servidor en la compu (npm start)
 data/
   verbs.js          Verbos del PDF de clase (irregulares y regulares)
@@ -100,7 +102,8 @@ tests/api.test.js
 
 ## Publicar en Vercel
 
-- Vercel detecta Express solo y usa `app.js` como punto de entrada (por el `export default`).
-- No hace falta `vercel.json`, ni comando de build.
-- Los archivos de `public/` los sirve Vercel directamente (en Vercel `express.static` no se usa).
-- No agregar otro archivo `index.js` o `server.js` en la raíz: Vercel podría tomarlo como entrada.
+- `api/index.js` es la función que atiende todo lo que empieza con `/api/`. Usa la misma app de `app.js`.
+- `vercel.json` manda cada pedido `/api/...` a esa función.
+- Los archivos de `public/` (la página, el CSS, el JS y las imágenes) los sirve Vercel directamente.
+- En Vercel: Settings → Build and Deployment → Framework Preset en "Other", sin Build Command y con Output Directory vacío o `public`.
+- Para probar: `/api/health` tiene que mostrar `{"ok":true}`.

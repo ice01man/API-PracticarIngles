@@ -1,23 +1,20 @@
 {
   "name": "api-english",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "App para practicar inglés y verbos irregulares, para chicos y adultos",
   "main": "app.js",
   "type": "module",
   "scripts": {
     "start": "node start.js",
-    "dev": "nodemon start.js",
+    "dev": "node --watch start.js",
     "test": "node --test"
   },
   "engines": {
-    "node": ">=26.x"
+    "node": "26.x"
   },
   "author": "RETA Paulo",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.10"
+    "express": "^5.3.0"
   }
 }
